@@ -1,0 +1,19 @@
+Bootstrap: docker
+From: ubuntu:18.04
+
+%post
+   export DEBIAN_FRONTEND=noninteractive
+   # Install common dependencies
+   apt-get update
+   apt-get --yes install --no-install-recommends \
+      python \
+      python-pip 
+   pip install setuptools
+   pip install \
+      dash \
+      dash-bootstrap-components \
+      Flask \
+      numpy
+    
+%help
+    Singularity image containing all the dependencies needed to host LOFAR proposal tool.
