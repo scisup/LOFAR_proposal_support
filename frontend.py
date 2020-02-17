@@ -13,7 +13,7 @@ import DegSupIndicator_v0 as d
 # Initialize the dash app
 server = flask.Flask(__name__)
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.LUMEN], \
-                server=server)
+                server=server, url_base_pathname='/support_estimator/')
 app.css.config.serve_locally = True
 app.scripts.config.serve_locally = True
 
@@ -76,6 +76,6 @@ def on_calculate_click(n, prop_type, obs_type, n_hours_total, \
         return output_str
 
 if __name__ == '__main__':
-    app.run_server(debug=True, host='0.0.0.0', port=8052)
-    #app.run_server(debug=False, host='0.0.0.0', port=8052, \
-    #              dev_tools_ui=False, dev_tools_props_check=False)
+    #app.run_server(debug=True, host='0.0.0.0', port=8052)
+    app.run_server(debug=False, host='0.0.0.0', port=8052, \
+                  dev_tools_ui=False, dev_tools_props_check=False)

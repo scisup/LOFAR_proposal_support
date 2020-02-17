@@ -210,4 +210,4 @@ layout = html.Div([
             html.Hr(),
             dbc.Row(dbc.Col(form)),
             dbc.Row(dbc.Col(output))
-         ], style={'width':'35%', 'padding':'20px'})
+         ], style={'width':'45%', 'padding':'20px'})
