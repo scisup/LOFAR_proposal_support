@@ -63,7 +63,8 @@ obs_strategy = dbc.FormGroup([
                           {'label':'bookended', 'value':'bookended'},
                           {'label':'interleaved', 'value':'interleaved'},
                           {'label':'no-LST-constraint', 'value':'noLST-constraint'},
-                          {'label':'no-Calibrator-needed', 'value':'noCALIBRATOR-needed'}
+                          {'label':'single-run', 'value':'single-run'},
+                          {'label':'lucky-imaging', 'value':'lucky-imaging'}
                         ], value='noLST-constraint', 
                         searchable=False, clearable=False, 
                         id='obs_strategy_drop'
@@ -85,13 +86,13 @@ runs = dbc.FormGroup([
 
 # No. of subbands per observation
 nsap = dbc.FormGroup([
-                dbc.Label('Number of SAPs per observation (0-488)', width=labelWidth),
+                dbc.Label('Number of SAPs per observation (0-8)', width=labelWidth),
                 dbc.Col(
                     dbc.Input(type='number',
                               id='nSAP',
                               value=1,
                               min=1,
-                              max=488
+                              max=8
                     ), width=inpWidth
                 )
             ], row=True)
@@ -125,7 +126,7 @@ para_obs = dbc.FormGroup([
 
 # Observing strategy
 array_req = dbc.FormGroup([
-                dbc.Label('Do you need special array configuration?', width=labelWidth),
+                dbc.Label('Do you need special array configuration? (e.g. any stations not to be missed)', width=labelWidth),
                 dbc.Col(
                     dcc.Dropdown(
                         options=[

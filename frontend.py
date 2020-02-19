@@ -8,7 +8,7 @@ import dash_bootstrap_components as dbc
 from dash.dependencies import Output, State, Input
 from gui import layout
 import flask
-import DegSupIndicator_v0 as d
+import DegSupIndicator_v1 as d
 
 # Initialize the dash app
 server = flask.Flask(__name__)
