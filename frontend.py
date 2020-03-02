@@ -8,7 +8,7 @@ import dash_bootstrap_components as dbc
 from dash.dependencies import Output, State, Input
 from gui import layout
 import flask
-import DegSupIndicator_v1 as d
+import DegSupIndicator_v1_1 as d
 
 # Initialize the dash app
 server = flask.Flask(__name__)
@@ -70,9 +70,8 @@ def on_calculate_click(n, prop_type, obs_type, n_hours_total, \
             Resptel = str2bool(rt),
             Targlistupd = str2bool(change_tar),
             Npipxobs = n_pipe,
-            Dynsp = str2bool(dynspec),
-            Debug=False
-        )        
+            Dynsp = str2bool(dynspec)
+        )
         return output_str
 
 if __name__ == '__main__':
