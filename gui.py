@@ -11,14 +11,16 @@ inpWidth = 4
 dropWidth = 4
 
 # PROPOSAL TYPE
+single_cycle_only = [ {'label':'Single cycle', 'value':'LC'} ]
+long_term_cycle   = [
+                        {'label':'Long term', 'value':'LT'},
+                        {'label':'Single cycle', 'value':'LC'}
+                    ]
 prop_type = dbc.FormGroup([
                 dbc.Label('Proposal type', width=labelWidth),
                 dbc.Col(
                     dcc.Dropdown(
-                        options=[
-                            {'label':'Long term', 'value':'LT'},
-                            {'label':'Single cycle', 'value':'LC'}
-                        ], value='LC', 
+                        options=single_cycle_only, value='LC', 
                         searchable=False, clearable=False, 
                         id='prop_type_drop'
                     ), width=dropWidth
